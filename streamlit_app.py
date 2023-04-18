@@ -68,8 +68,7 @@ grouped_data = final_data.groupby(["LEAGUE_NAME", "COLLECTION_STATUS"])["ID"].co
 pivot_table = pd.pivot_table(grouped_data, values="ID", index="LEAGUE_NAME", columns="COLLECTION_STATUS", fill_value=0)
 
 # Create a pie chart of the counts by COLLECTION_STATUS
-fig = px.pie(pivot_table, values="Complete", names=pivot_table.index, title="Collection Status by League Name")
-
+fig = px.pie(values=pivot_table.sum(axis=0), names=pivot_table.columns)
 # Display the chart in the Streamlit app
 st.plotly_chart(fig)
 
