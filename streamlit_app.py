@@ -56,8 +56,6 @@ filtered_data = final_data[
 st.write("### Final Data")
 st.dataframe(filtered_data)
 
-# Display a scatter plot of the data
-st.write("### Scatter Plot")
-fig = px.scatter(filtered_data, x="START_DATE_UTC", y="ID", color="COLLECTION_STATUS", size="COVERAGE_LEVEL")
-st.plotly_chart(fig)
-
+# Create a bar chart of the number of matches per league
+match_count = final_data.groupby("LEAGUE_NAME")["ID"].count().reset_index()
+st.bar_chart(match_count.set_index("LEAGUE_NAME"))
