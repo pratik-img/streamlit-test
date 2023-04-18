@@ -61,8 +61,10 @@ st.dataframe(filtered_data)
 match_count = final_data.groupby("LEAGUE_NAME")["ID"].count().reset_index()
 st.bar_chart(match_count.set_index("LEAGUE_NAME"))
 
-# Create the pie chart
-fig = px.pie(final_data, values='COLLECTION_STATUS', names='LEAGUE_NAME')
+import plotly.graph_objs as go
+# ... code for creating the data and the DataFrame ...
+fig = go.Figure(data=[go.Pie(labels=status_counts.index, values=status_counts.values)])
 st.plotly_chart(fig)
+
 
 
