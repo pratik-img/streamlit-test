@@ -26,7 +26,7 @@ final_data = pd.DataFrame({"ID": [data[x]['id'] for x in range(0,len(data))],
                            "LEAGUE_NAME": [data[x]['stage']['season']['competition']['name'] for x in range(0,len(data))]})
 
 # Set the title of the app
-st.title("Interactive Dashboard")
+st.title("Football 19/04/2023")
 
 # Add a sidebar with filters
 st.sidebar.title("Filters")
