@@ -61,9 +61,13 @@ st.dataframe(filtered_data)
 match_count = final_data.groupby("LEAGUE_NAME")["ID"].count().reset_index()
 st.bar_chart(match_count.set_index("LEAGUE_NAME"))
 
-import plotly.graph_objs as go
-# ... code for creating the data and the DataFrame ...
-fig = go.Figure(data=[go.Pie(labels=status_counts.index, values=status_counts.values)])
+# Group by LEAGUE_NAME and COLLECTION_STATUS and count number of IDs
+grouped_data = final_data.groupby(["LEAGUE_NAME", "COLLECTION_STATUS"])["ID"].count().reset_index()
+# Create a pivot table to display the counts by COLLECTION_STATUS
+pivot_table = pd.pivot_table(grouped_data, values="ID", index="LEAGUE_NAME", columns="COLLECTION_STATUS", fill_value=0)
+# Create a bar chart of the counts by LEAGUE_NAME
+fig = px.bar(pivot_table, x=pivot_table.index, y=["Complete", "Incomplete"], barmode="stack")
+# Display the chart in the Streamlit app
 st.plotly_chart(fig)
 
 
