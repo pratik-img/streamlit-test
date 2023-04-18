@@ -9,6 +9,7 @@ Original file is located at
 
 import requests
 import pandas as pd
+import matplotlib
 
 url = 'https://dde-api.data.imgarena.com/soccer/fixtures?subscribed=true&dateFrom=2023-04-19&dateTo=2023-04-19&type=official'
 headers = {
