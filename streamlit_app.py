@@ -62,7 +62,7 @@ match_count = final_data.groupby("LEAGUE_NAME")["ID"].count().reset_index()
 st.bar_chart(match_count.set_index("LEAGUE_NAME"))
 
 # Create the pie chart
-status_counts = final_data["COLLECTION_STATUS"].value_counts()
-st.write("Collection Status Distribution:")
-st.plotly_chart(status_counts.plot.pie())
+fig = px.pie(final_data, values='COLLECTION_STATUS', names='LEAGUE_NAME')
+st.plotly_chart(fig)
+
 
