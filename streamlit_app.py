@@ -4,8 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyOZ9xjBRgizgLe89JbWS9PA",
-      "include_colab_link": true
+      "authorship_tag": "ABX9TyOZ9xjBRgizgLe89JbWS9PA"
     },
     "kernelspec": {
       "name": "python3",
@@ -16,16 +15,6 @@
     }
   },
   "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/pratik-img/streamlit-test/blob/main/streamlit_app.py\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
     {
       "cell_type": "code",
       "execution_count": null,
@@ -102,38 +91,10 @@
         "st.plotly_chart(fig)"
       ],
       "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 312
-        },
-        "id": "jTrbbcbqYqTN",
-        "outputId": "cd634164-ca79-489a-d025-1478a3882279"
+        "id": "jTrbbcbqYqTN"
       },
-      "execution_count": 4,
-      "outputs": [
-        {
-          "output_type": "error",
-          "ename": "ModuleNotFoundError",
-          "evalue": "ignored",
-          "traceback": [
-            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-            "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
-            "\u001b[0;32m<ipython-input-4-1aa3dc4fa683>\u001b[0m in \u001b[0;36m<cell line: 1>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0mstreamlit\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mst\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
-            "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'streamlit'",
-            "",
-            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0;32m\nNOTE: If your import is failing due to a missing package, you can\nmanually install dependencies using either !pip or !apt.\n\nTo view examples of installing some common dependencies, click the\n\"Open Examples\" button below.\n\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n"
-          ],
-          "errorDetails": {
-            "actions": [
-              {
-                "action": "open_url",
-                "actionText": "Open Examples",
-                "url": "/notebooks/snippets/importing_libraries.ipynb"
-              }
-            ]
-          }
-        }
-      ]
+      "execution_count": null,
+      "outputs": []
     },
     {
       "cell_type": "code",
