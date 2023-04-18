@@ -28,7 +28,7 @@ else:
 
 final_data = pd.DataFrame({"ID": [data[x]['id'] for x in range(0,len(data))],
                            "NAME": [data[x]['name'] for x in range(0,len(data))],
-                           "COLLEXTION_SATUS": [data[x]['collectionStatus'] for x in range(0,len(data))],
+                           "COLLECTION_SATUS": [data[x]['collectionStatus'] for x in range(0,len(data))],
                            "COVERAGE_LEVEL": [data[x]['coverageLevel'] for x in range(0,len(data))],
                            "START_DATE_UTC": [data[x]['startDateUTC'] for x in range(0,len(data))],
                            "LEAGUE_NAME": [data[x]['stage']['season']['competition']['name'] for x in range(0,len(data))]})
@@ -37,7 +37,7 @@ import streamlit as st
 import plotly.express as px
 
 # Set the title of the app
-st.title("Interactive Dashboard")
+st.title("FOOTBALL 19/04/2023")
 
 # Add a sidebar with filters
 st.sidebar.title("Filters")
