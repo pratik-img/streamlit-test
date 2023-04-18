@@ -63,10 +63,13 @@ st.bar_chart(match_count.set_index("LEAGUE_NAME"))
 
 # Group by LEAGUE_NAME and COLLECTION_STATUS and count number of IDs
 grouped_data = final_data.groupby(["LEAGUE_NAME", "COLLECTION_STATUS"])["ID"].count().reset_index()
+
 # Create a pivot table to display the counts by COLLECTION_STATUS
 pivot_table = pd.pivot_table(grouped_data, values="ID", index="LEAGUE_NAME", columns="COLLECTION_STATUS", fill_value=0)
-# Create a bar chart of the counts by LEAGUE_NAME
-fig = px.bar(pivot_table, x=pivot_table.index, y=["Complete", "Incomplete"], barmode="stack")
+
+# Create a pie chart of the counts by COLLECTION_STATUS
+fig = px.pie(pivot_table, values="Complete", names=pivot_table.index, title="Collection Status by League Name")
+
 # Display the chart in the Streamlit app
 st.plotly_chart(fig)
 
