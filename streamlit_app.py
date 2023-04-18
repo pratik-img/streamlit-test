@@ -59,3 +59,15 @@ st.dataframe(filtered_data)
 # Create a bar chart of the number of matches per league
 match_count = final_data.groupby("LEAGUE_NAME")["ID"].count().reset_index()
 st.bar_chart(match_count.set_index("LEAGUE_NAME"))
+
+import streamlit as st
+import pandas as pd
+
+# Load the data
+final_data = pd.read_csv("path/to/data.csv")
+
+# Create the pie chart
+status_counts = final_data["COLLECTION_STATUS"].value_counts()
+st.write("Collection Status Distribution:")
+st.plotly_chart(status_counts.plot.pie())
+
